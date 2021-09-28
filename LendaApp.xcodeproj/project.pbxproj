@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46C55CFAAF161B86260236F0 /* Pods_LendaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9FBFF64A3162BEA989B069 /* Pods_LendaApp.framework */; };
+		CB15AAE426999E660022FEB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAE326999E660022FEB1 /* AppDelegate.swift */; };
+		CB15AAE626999E660022FEB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAE526999E660022FEB1 /* SceneDelegate.swift */; };
+		CB15AAE826999E660022FEB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAE726999E660022FEB1 /* ViewController.swift */; };
+		CB15AAEB26999E660022FEB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB15AAE926999E660022FEB1 /* Main.storyboard */; };
+		CB15AAED26999E680022FEB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB15AAEC26999E680022FEB1 /* Assets.xcassets */; };
+		CB15AAF026999E680022FEB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB15AAEE26999E680022FEB1 /* LaunchScreen.storyboard */; };
+		CB15AAF926999ECB0022FEB1 /* 01SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAF726999ECB0022FEB1 /* 01SplashViewController.swift */; };
+		CB15AAFE2699DA910022FEB1 /* 02WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAFD2699DA910022FEB1 /* 02WellcomeViewController.swift */; };
+		CB15AB002699ED610022FEB1 /* 03LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AAFF2699ED610022FEB1 /* 03LoginViewController.swift */; };
+		CB15AB02269A0B390022FEB1 /* 04RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB15AB01269A0B390022FEB1 /* 04RegisterViewController.swift */; };
+		CB168BB826A26D0A00F292F3 /* 10PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB168BB726A26D0A00F292F3 /* 10PersonalPageViewController.swift */; };
+		CB168BBA26A2851500F292F3 /* 10PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB168BB926A2851500F292F3 /* 10PersonalPageTableViewCell.swift */; };
+		CB168BBC26A2DFDE00F292F3 /* 12SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB168BBB26A2DFDE00F292F3 /* 12SupportViewController.swift */; };
+		CB168BBE26A2E00200F292F3 /* 12SupportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB168BBD26A2E00200F292F3 /* 12SupportTableViewCell.swift */; };
+		CB24052A26A3BE3A00458244 /* 15InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24052926A3BE3A00458244 /* 15InstructionsViewController.swift */; };
+		CB24052C26A3C14500458244 /* 15InstructionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24052B26A3C14500458244 /* 15InstructionsTableViewCell.swift */; };
+		CB4B955926A1226A003C3084 /* 08HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B955826A1226A003C3084 /* 08HomePageTableViewCell.swift */; };
+		CB4DEBFA26CF554200F8C4BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */; };
+		CB7AD81426A522A2002A2122 /* 16ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD81326A522A2002A2122 /* 16ProfileViewController.swift */; };
+		CB7AD81626A522B7002A2122 /* 16ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD81526A522B7002A2122 /* 16ProfileTableViewCell.swift */; };
+		CB974FBD269AA11200ACFB3D /* 05ForgotPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB974FBC269AA11200ACFB3D /* 05ForgotPassWordViewController.swift */; };
+		CB974FBF269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB974FBE269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift */; };
+		CBA73F3E26F5A6830005154C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA73F3D26F5A6830005154C /* Data.swift */; };
+		CBAB9BA226A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAB9BA126A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift */; };
+		CBAB9BA426A872B600B6AC2D /* 23HistoryLoanAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAB9BA326A872B600B6AC2D /* 23HistoryLoanAmountTableViewCell.swift */; };
+		CBB4124B26A31F78002B2717 /* 13PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB4124A26A31F78002B2717 /* 13PrivacyPolicyViewController.swift */; };
+		CBB4124D26A33B7E002B2717 /* 14PresentLendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB4124C26A33B7E002B2717 /* 14PresentLendaViewController.swift */; };
+		CBB966E426A96BE6008E7EA7 /* 17NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB966E326A96BE6008E7EA7 /* 17NotificationViewController.swift */; };
+		CBB966E626A96C10008E7EA7 /* 17NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB966E526A96C10008E7EA7 /* 17NotificationTableViewCell.swift */; };
+		CBB966E826A97D46008E7EA7 /* 18DetailsNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB966E726A97D46008E7EA7 /* 18DetailsNotificationViewController.swift */; };
+		CBCC441C26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC441B26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift */; };
+		CBEE7A7B269FD9A80053C10D /* 07ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE7A7A269FD9A80053C10D /* 07ChangePasswordViewController.swift */; };
+		CBEE7A7D269FD9C40053C10D /* 08HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE7A7C269FD9C40053C10D /* 08HomePageViewController.swift */; };
+		CBF459EB26FD808800D3D497 /* CreateContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF459EA26FD808800D3D497 /* CreateContractViewController.swift */; };
+		CBF459ED26FD80FA00D3D497 /* CreateContractUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF459EC26FD80FA00D3D497 /* CreateContractUITableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BA3127A056E346B84BD2183 /* Pods-LendaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LendaApp.release.xcconfig"; path = "Target Support Files/Pods-LendaApp/Pods-LendaApp.release.xcconfig"; sourceTree = "<group>"; };
+		83790A86CC699D9A89A6A045 /* Pods-LendaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LendaApp.debug.xcconfig"; path = "Target Support Files/Pods-LendaApp/Pods-LendaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9FBFF64A3162BEA989B069 /* Pods_LendaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LendaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB15AAE026999E660022FEB1 /* LendaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LendaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB15AAE326999E660022FEB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB15AAE526999E660022FEB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CB15AAE726999E660022FEB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB15AAEA26999E660022FEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB15AAEC26999E680022FEB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB15AAEF26999E680022FEB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB15AAF126999E680022FEB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB15AAF726999ECB0022FEB1 /* 01SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01SplashViewController.swift; sourceTree = "<group>"; };
+		CB15AAFD2699DA910022FEB1 /* 02WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 02WellcomeViewController.swift; sourceTree = "<group>"; };
+		CB15AAFF2699ED610022FEB1 /* 03LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 03LoginViewController.swift; sourceTree = "<group>"; };
+		CB15AB01269A0B390022FEB1 /* 04RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04RegisterViewController.swift; sourceTree = "<group>"; };
+		CB168BB726A26D0A00F292F3 /* 10PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10PersonalPageViewController.swift; sourceTree = "<group>"; };
+		CB168BB926A2851500F292F3 /* 10PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
+		CB168BBB26A2DFDE00F292F3 /* 12SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12SupportViewController.swift; sourceTree = "<group>"; };
+		CB168BBD26A2E00200F292F3 /* 12SupportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12SupportTableViewCell.swift; sourceTree = "<group>"; };
+		CB24052926A3BE3A00458244 /* 15InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15InstructionsViewController.swift; sourceTree = "<group>"; };
+		CB24052B26A3C14500458244 /* 15InstructionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15InstructionsTableViewCell.swift; sourceTree = "<group>"; };
+		CB4B955826A1226A003C3084 /* 08HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB7AD81326A522A2002A2122 /* 16ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16ProfileViewController.swift; sourceTree = "<group>"; };
+		CB7AD81526A522B7002A2122 /* 16ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		CB974FBC269AA11200ACFB3D /* 05ForgotPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05ForgotPassWordViewController.swift; sourceTree = "<group>"; };
+		CB974FBE269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06AccuracyOTPViewController.swift; sourceTree = "<group>"; };
+		CBA73F3D26F5A6830005154C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CBAB9BA126A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23HistoryLoanAmountViewController.swift; sourceTree = "<group>"; };
+		CBAB9BA326A872B600B6AC2D /* 23HistoryLoanAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23HistoryLoanAmountTableViewCell.swift; sourceTree = "<group>"; };
+		CBB4124A26A31F78002B2717 /* 13PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 13PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		CBB4124C26A33B7E002B2717 /* 14PresentLendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 14PresentLendaViewController.swift; sourceTree = "<group>"; };
+		CBB966E326A96BE6008E7EA7 /* 17NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17NotificationViewController.swift; sourceTree = "<group>"; };
+		CBB966E526A96C10008E7EA7 /* 17NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		CBB966E726A97D46008E7EA7 /* 18DetailsNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18DetailsNotificationViewController.swift; sourceTree = "<group>"; };
+		CBCC441B26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 09InvestmentDetailsViewController.swift; sourceTree = "<group>"; };
+		CBEE7A7A269FD9A80053C10D /* 07ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 07ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CBEE7A7C269FD9C40053C10D /* 08HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08HomePageViewController.swift; sourceTree = "<group>"; };
+		CBF459EA26FD808800D3D497 /* CreateContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractViewController.swift; sourceTree = "<group>"; };
+		CBF459EC26FD80FA00D3D497 /* CreateContractUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractUITableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB15AADD26999E660022FEB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C55CFAAF161B86260236F0 /* Pods_LendaApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		981E3E4C8C5E79273FE329F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83790A86CC699D9A89A6A045 /* Pods-LendaApp.debug.xcconfig */,
+				3BA3127A056E346B84BD2183 /* Pods-LendaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB15AAD726999E660022FEB1 = {
+			isa = PBXGroup;
+			children = (
+				CB15AAE226999E660022FEB1 /* LendaApp */,
+				CB15AAE126999E660022FEB1 /* Products */,
+				981E3E4C8C5E79273FE329F0 /* Pods */,
+				F2185FF92EE51D03F6F229C1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CB15AAE126999E660022FEB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AAE026999E660022FEB1 /* LendaApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB15AAE226999E660022FEB1 /* LendaApp */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AAE326999E660022FEB1 /* AppDelegate.swift */,
+				CB15AAE526999E660022FEB1 /* SceneDelegate.swift */,
+				CB15AAE726999E660022FEB1 /* ViewController.swift */,
+				CB15AAE926999E660022FEB1 /* Main.storyboard */,
+				CB15AAEC26999E680022FEB1 /* Assets.xcassets */,
+				CBA73F3C26F5A6520005154C /* Model */,
+				CB4DEBFB26CF5DBE00F8C4BC /* 01SlashVC */,
+				CB4DEBFC26CF5E0200F8C4BC /* 02 WellcomeVC */,
+				CB4DEBFD26CF5E4600F8C4BC /* 03 LoginVC */,
+				CB4DEBFE26CF5E7100F8C4BC /* 04 RegisterVC */,
+				CB4DEBFF26CF5E8600F8C4BC /* 05 ForgotPasswordVC */,
+				CB4DEC0026CF5EA800F8C4BC /* 06 AccuracyOTP VC */,
+				CB4DEC0126CF5ECB00F8C4BC /* 07 ChangePasswordVC */,
+				CB4DEC0226CF613200F8C4BC /* 08 HomePageVC */,
+				CB4DEC0326CF616E00F8C4BC /* 09 InvestmentDetailsVC */,
+				CB4DEC0426CF61B300F8C4BC /* 10 PersonalPage */,
+				CB4DEC0526CF61CE00F8C4BC /* 12 Support */,
+				CB4DEC0626CF61F100F8C4BC /* 13 PrivacyPolicyVC */,
+				CB4DEC0726CF620A00F8C4BC /* 14 PresentLenda */,
+				CB4DEC0826CF623100F8C4BC /* 15 InstructionsVC */,
+				CB4DEC0926CF625800F8C4BC /* 16 ProfileVC */,
+				CB4DEC0A26CF627500F8C4BC /* 17 NotificationVC */,
+				CB4DEC0B26CF629000F8C4BC /* 18 DetailNotificationVC */,
+				CBF459E926FD7FD800D3D497 /* 20 CreateContract */,
+				CB4DEC0C26CF62A300F8C4BC /* 23 HistoryLoanAmountVC */,
+				CB15AAEE26999E680022FEB1 /* LaunchScreen.storyboard */,
+				CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */,
+				CB15AAF126999E680022FEB1 /* Info.plist */,
+			);
+			path = LendaApp;
+			sourceTree = "<group>";
+		};
+		CB4DEBFB26CF5DBE00F8C4BC /* 01SlashVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AAF726999ECB0022FEB1 /* 01SplashViewController.swift */,
+			);
+			path = 01SlashVC;
+			sourceTree = "<group>";
+		};
+		CB4DEBFC26CF5E0200F8C4BC /* 02 WellcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AAFD2699DA910022FEB1 /* 02WellcomeViewController.swift */,
+			);
+			path = "02 WellcomeVC";
+			sourceTree = "<group>";
+		};
+		CB4DEBFD26CF5E4600F8C4BC /* 03 LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AAFF2699ED610022FEB1 /* 03LoginViewController.swift */,
+			);
+			path = "03 LoginVC";
+			sourceTree = "<group>";
+		};
+		CB4DEBFE26CF5E7100F8C4BC /* 04 RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB15AB01269A0B390022FEB1 /* 04RegisterViewController.swift */,
+			);
+			path = "04 RegisterVC";
+			sourceTree = "<group>";
+		};
+		CB4DEBFF26CF5E8600F8C4BC /* 05 ForgotPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB974FBC269AA11200ACFB3D /* 05ForgotPassWordViewController.swift */,
+			);
+			path = "05 ForgotPasswordVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0026CF5EA800F8C4BC /* 06 AccuracyOTP VC */ = {
+			isa = PBXGroup;
+			children = (
+				CB974FBE269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift */,
+			);
+			path = "06 AccuracyOTP VC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0126CF5ECB00F8C4BC /* 07 ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBEE7A7A269FD9A80053C10D /* 07ChangePasswordViewController.swift */,
+			);
+			path = "07 ChangePasswordVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0226CF613200F8C4BC /* 08 HomePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBEE7A7C269FD9C40053C10D /* 08HomePageViewController.swift */,
+				CB4B955826A1226A003C3084 /* 08HomePageTableViewCell.swift */,
+			);
+			path = "08 HomePageVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0326CF616E00F8C4BC /* 09 InvestmentDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBCC441B26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift */,
+			);
+			path = "09 InvestmentDetailsVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0426CF61B300F8C4BC /* 10 PersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+				CB168BB726A26D0A00F292F3 /* 10PersonalPageViewController.swift */,
+				CB168BB926A2851500F292F3 /* 10PersonalPageTableViewCell.swift */,
+			);
+			path = "10 PersonalPage";
+			sourceTree = "<group>";
+		};
+		CB4DEC0526CF61CE00F8C4BC /* 12 Support */ = {
+			isa = PBXGroup;
+			children = (
+				CB168BBB26A2DFDE00F292F3 /* 12SupportViewController.swift */,
+				CB168BBD26A2E00200F292F3 /* 12SupportTableViewCell.swift */,
+			);
+			path = "12 Support";
+			sourceTree = "<group>";
+		};
+		CB4DEC0626CF61F100F8C4BC /* 13 PrivacyPolicyVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBB4124A26A31F78002B2717 /* 13PrivacyPolicyViewController.swift */,
+			);
+			path = "13 PrivacyPolicyVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0726CF620A00F8C4BC /* 14 PresentLenda */ = {
+			isa = PBXGroup;
+			children = (
+				CBB4124C26A33B7E002B2717 /* 14PresentLendaViewController.swift */,
+			);
+			path = "14 PresentLenda";
+			sourceTree = "<group>";
+		};
+		CB4DEC0826CF623100F8C4BC /* 15 InstructionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB24052926A3BE3A00458244 /* 15InstructionsViewController.swift */,
+				CB24052B26A3C14500458244 /* 15InstructionsTableViewCell.swift */,
+			);
+			path = "15 InstructionsVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0926CF625800F8C4BC /* 16 ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB7AD81326A522A2002A2122 /* 16ProfileViewController.swift */,
+				CB7AD81526A522B7002A2122 /* 16ProfileTableViewCell.swift */,
+			);
+			path = "16 ProfileVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0A26CF627500F8C4BC /* 17 NotificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBB966E326A96BE6008E7EA7 /* 17NotificationViewController.swift */,
+				CBB966E526A96C10008E7EA7 /* 17NotificationTableViewCell.swift */,
+			);
+			path = "17 NotificationVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0B26CF629000F8C4BC /* 18 DetailNotificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBB966E726A97D46008E7EA7 /* 18DetailsNotificationViewController.swift */,
+			);
+			path = "18 DetailNotificationVC";
+			sourceTree = "<group>";
+		};
+		CB4DEC0C26CF62A300F8C4BC /* 23 HistoryLoanAmountVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBAB9BA126A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift */,
+				CBAB9BA326A872B600B6AC2D /* 23HistoryLoanAmountTableViewCell.swift */,
+			);
+			path = "23 HistoryLoanAmountVC";
+			sourceTree = "<group>";
+		};
+		CBA73F3C26F5A6520005154C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBA73F3D26F5A6830005154C /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBF459E926FD7FD800D3D497 /* 20 CreateContract */ = {
+			isa = PBXGroup;
+			children = (
+				CBF459EA26FD808800D3D497 /* CreateContractViewController.swift */,
+				CBF459EC26FD80FA00D3D497 /* CreateContractUITableViewCell.swift */,
+			);
+			path = "20 CreateContract";
+			sourceTree = "<group>";
+		};
+		F2185FF92EE51D03F6F229C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD9FBFF64A3162BEA989B069 /* Pods_LendaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB15AADF26999E660022FEB1 /* LendaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB15AAF426999E680022FEB1 /* Build configuration list for PBXNativeTarget "LendaApp" */;
+			buildPhases = (
+				5A3655B4CC31110850971C1E /* [CP] Check Pods Manifest.lock */,
+				CB15AADC26999E660022FEB1 /* Sources */,
+				CB15AADD26999E660022FEB1 /* Frameworks */,
+				CB15AADE26999E660022FEB1 /* Resources */,
+				CFB03C416AC0D2AF4D410BFD /* [CP] Embed Pods Frameworks */,
+				7DBB3843CFBE1A9669E289F0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LendaApp;
+			productName = LendaApp;
+			productReference = CB15AAE026999E660022FEB1 /* LendaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB15AAD826999E660022FEB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CB15AADF26999E660022FEB1 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = CB15AADB26999E660022FEB1 /* Build configuration list for PBXProject "LendaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB15AAD726999E660022FEB1;
+			productRefGroup = CB15AAE126999E660022FEB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB15AADF26999E660022FEB1 /* LendaApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB15AADE26999E660022FEB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB15AAF026999E680022FEB1 /* LaunchScreen.storyboard in Resources */,
+				CB15AAED26999E680022FEB1 /* Assets.xcassets in Resources */,
+				CB15AAEB26999E660022FEB1 /* Main.storyboard in Resources */,
+				CB4DEBFA26CF554200F8C4BC /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A3655B4CC31110850971C1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LendaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DBB3843CFBE1A9669E289F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFB03C416AC0D2AF4D410BFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB15AADC26999E660022FEB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB15AAE826999E660022FEB1 /* ViewController.swift in Sources */,
+				CB15AB002699ED610022FEB1 /* 03LoginViewController.swift in Sources */,
+				CBEE7A7B269FD9A80053C10D /* 07ChangePasswordViewController.swift in Sources */,
+				CB974FBF269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift in Sources */,
+				CB15AAE426999E660022FEB1 /* AppDelegate.swift in Sources */,
+				CBB966E826A97D46008E7EA7 /* 18DetailsNotificationViewController.swift in Sources */,
+				CB24052C26A3C14500458244 /* 15InstructionsTableViewCell.swift in Sources */,
+				CB4B955926A1226A003C3084 /* 08HomePageTableViewCell.swift in Sources */,
+				CBB966E626A96C10008E7EA7 /* 17NotificationTableViewCell.swift in Sources */,
+				CB15AAF926999ECB0022FEB1 /* 01SplashViewController.swift in Sources */,
+				CB168BBC26A2DFDE00F292F3 /* 12SupportViewController.swift in Sources */,
+				CB15AAE626999E660022FEB1 /* SceneDelegate.swift in Sources */,
+				CBB4124B26A31F78002B2717 /* 13PrivacyPolicyViewController.swift in Sources */,
+				CBB966E426A96BE6008E7EA7 /* 17NotificationViewController.swift in Sources */,
+				CB15AAFE2699DA910022FEB1 /* 02WellcomeViewController.swift in Sources */,
+				CBCC441C26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift in Sources */,
+				CB7AD81426A522A2002A2122 /* 16ProfileViewController.swift in Sources */,
+				CB168BB826A26D0A00F292F3 /* 10PersonalPageViewController.swift in Sources */,
+				CBA73F3E26F5A6830005154C /* Data.swift in Sources */,
+				CB15AB02269A0B390022FEB1 /* 04RegisterViewController.swift in Sources */,
+				CB7AD81626A522B7002A2122 /* 16ProfileTableViewCell.swift in Sources */,
+				CBAB9BA426A872B600B6AC2D /* 23HistoryLoanAmountTableViewCell.swift in Sources */,
+				CBB4124D26A33B7E002B2717 /* 14PresentLendaViewController.swift in Sources */,
+				CB24052A26A3BE3A00458244 /* 15InstructionsViewController.swift in Sources */,
+				CBF459EB26FD808800D3D497 /* CreateContractViewController.swift in Sources */,
+				CB974FBD269AA11200ACFB3D /* 05ForgotPassWordViewController.swift in Sources */,
+				CB168BBE26A2E00200F292F3 /* 12SupportTableViewCell.swift in Sources */,
+				CBEE7A7D269FD9C40053C10D /* 08HomePageViewController.swift in Sources */,
+				CBF459ED26FD80FA00D3D497 /* CreateContractUITableViewCell.swift in Sources */,
+				CBAB9BA226A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift in Sources */,
+				CB168BBA26A2851500F292F3 /* 10PersonalPageTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB15AAE926999E660022FEB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB15AAEA26999E660022FEB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB15AAEE26999E680022FEB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB15AAEF26999E680022FEB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB15AAF226999E680022FEB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB15AAF326999E680022FEB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB15AAF526999E680022FEB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83790A86CC699D9A89A6A045 /* Pods-LendaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LendaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = swift.LendaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB15AAF626999E680022FEB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA3127A056E346B84BD2183 /* Pods-LendaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LendaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = swift.LendaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB15AADB26999E660022FEB1 /* Build configuration list for PBXProject "LendaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB15AAF226999E680022FEB1 /* Debug */,
+				CB15AAF326999E680022FEB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB15AAF426999E680022FEB1 /* Build configuration list for PBXNativeTarget "LendaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB15AAF526999E680022FEB1 /* Debug */,
+				CB15AAF626999E680022FEB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB15AAD826999E660022FEB1 /* Project object */;
+}
