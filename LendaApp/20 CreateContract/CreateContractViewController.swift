@@ -94,6 +94,12 @@ class CreateContractViewController: UIViewController {
     }
     
     @objc func uploadValueToTheFirebase() {
+        arrayValue.map { value in
+            if value == "" {
+                self.view.makeToast("Vui lòng nhập đủ thông tin!")
+                return
+            }
+        }
         ProgressHUD.show()
         guard let user = Auth.auth().currentUser else {return}
         let dataBase = Firestore.firestore()
@@ -102,9 +108,9 @@ class CreateContractViewController: UIViewController {
         let contractInformationCollection = userDocument.collection("ContractInformation")
         let contractInformationDocument = contractInformationCollection.document(UUID().uuidString)
         contractInformationDocument.setData(["LoanFormat": arrayValue[0],
-                                         "LoanAmount": arrayValue[1],
-                                         "InterestRate": arrayValue[2],
-                                         "LoanDuration": arrayValue[3],
+                                         "LoanAmount": arrayValue[1] + " VNĐ",
+                                         "InterestRate": arrayValue[2] + "%/Năm",
+                                         "LoanDuration": arrayValue[3] + " Tháng",
                                          "PayFormat": arrayValue[4],
                                          "FullName": arrayValue[5],
                                          "NumberPhone": arrayValue[6],
@@ -112,7 +118,7 @@ class CreateContractViewController: UIViewController {
                                         ])
         ProgressHUD.dismiss()
         tableView.reloadData()
-        
+        self.view.makeToast("Cập nhật thành công")
     }
 
 }
@@ -123,11 +129,7 @@ extension CreateContractViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else {
-            return 6
-        }
+        if section == 0 {return 0} else { return 6 }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -152,9 +154,10 @@ extension CreateContractViewController: UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreateContractUITableViewCell", for: indexPath) as! CreateContractUITableViewCell
         cell.delegate = self
         cell.titleLabel.text = titleLable[indexPath.section][indexPath.row]
-        cell.unitLabel.text = unitLable[indexPath.row]
         if indexPath.section == 0 {
             cell.index = indexPath.row
+            cell.unitLabel.text = unitLable[indexPath.row]
+
         } else {
             cell.index = indexPath.row + titleLable[0].count
         }

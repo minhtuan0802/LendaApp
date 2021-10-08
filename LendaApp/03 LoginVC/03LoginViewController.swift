@@ -209,22 +209,22 @@ class _3LoginViewController: UIViewController {
                     self.view.makeToast("Tài khoản không hợp lệ!")
                 }
                 ProgressHUD.dismiss()
+                guard let user = Auth.auth().currentUser else {return}
+                let db = Firestore.firestore()
+                let userCollection = db.collection("User")
+                let userDocument = userCollection.document(user.uid)
+                let userInformationCollection = userDocument.collection("UserInformation")
+
+                userInformationCollection.getDocuments { [self] query, err in
+                    if err != nil {return}
+                    for i in query!.documents {
+                        self.userInformation.name = i.get("UserName") as? String ?? ""
+                        self.userInformation.email = i.get("UserEmail") as? String ?? ""
+                    }
+                }
             }
         }
         
-        guard let user = Auth.auth().currentUser else {return}
-        let db = Firestore.firestore()
-        let userCollection = db.collection("User")
-        let userDocument = userCollection.document(user.uid)
-        let userInformationCollection = userDocument.collection("UserInformation")
-        
-        userInformationCollection.getDocuments { [self] query, err in
-            if err != nil {return}
-            for i in query!.documents {
-                self.userInformation.name = i.get("UserName") as? String ?? ""
-                self.userInformation.email = i.get("UserEmail") as? String ?? ""
-            }
-        }
     }
     
     @objc func goToAccuracyOTPVC(){

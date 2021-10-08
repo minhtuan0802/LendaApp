@@ -39,11 +39,7 @@ class _8HomePageViewController: UIViewController {
         tableView.separatorStyle = .none
 
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
 
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
@@ -88,30 +84,34 @@ class _8HomePageViewController: UIViewController {
     }
     
     func fetchData(){
-        guard let user = Auth.auth().currentUser else {return}
-        let db = Firestore.firestore()
-        let userCollection = db.collection("User")
-        let userDocument = userCollection.document(user.uid)
-        let contractInformationCollection = userDocument.collection("ContractInformation")
-        arrContract.removeAll()
-        contractInformationCollection.addSnapshotListener { [self] query, err in
-            if err != nil {return}
-            for i in query!.documents {
-                self.contract.inforContract["LoanFormat"] = i.get("LoanFormat") as? String ?? ""
-                self.contract.inforContract["LoanAmount"] = i.get("LoanAmount") as? String ?? "" + "VNĐ"
-                self.contract.inforContract["InterestRate"] = i.get("InterestRate") as? String ?? "" + "%/Năm"
-                self.contract.inforContract["LoanDuration"] = i.get("LoanDuration") as? String ?? "" + " Tháng"
-                self.contract.inforContract["PayFormat"] = i.get("PayFormat") as? String ?? ""
-                self.contract.inforContract["FullName"] = i.get("FullName") as? String ?? ""
-                self.contract.inforContract["NumberPhone"] = i.get("NumberPhone") as? String ?? ""
-                self.contract.inforContract["Address"] = i.get("Address") as? String ?? ""
-                arrContract.append(contract.inforContract)
+            guard let user = Auth.auth().currentUser else {return}
+            let db = Firestore.firestore()
+            let userCollection = db.collection("User")
+            let userDocument = userCollection.document(user.uid)
+            let contractInformationCollection = userDocument.collection("ContractInformation")
+            contractInformationCollection.addSnapshotListener { [self] query, err in
+                if err != nil {return}
+
+                if arrContract.count < query!.documents.count {
+                    arrContract.removeAll()
+                }
+
+                for i in query!.documents {
+                    self.contract.inforContract["LoanFormat"] = i.get("LoanFormat") as? String ?? ""
+                    self.contract.inforContract["LoanAmount"] = i.get("LoanAmount") as? String ?? ""
+                    self.contract.inforContract["InterestRate"] = i.get("InterestRate") as? String ?? ""
+                    self.contract.inforContract["LoanDuration"] = i.get("LoanDuration") as? String ?? ""
+                    self.contract.inforContract["PayFormat"] = i.get("PayFormat") as? String ?? ""
+                    self.contract.inforContract["FullName"] = i.get("FullName") as? String ?? ""
+                    self.contract.inforContract["NumberPhone"] = i.get("NumberPhone") as? String ?? ""
+                    self.contract.inforContract["Address"] = i.get("Address") as? String ?? ""
+
+                    arrContract.append(contract.inforContract)
+                }
+                tableView.reloadData()
+                print("arrContract.count: \(arrContract.count)")
             }
-            tableView.reloadData()
         }
-    }
-
-
 }
 
 extension _8HomePageViewController: UITableViewDataSource, UITableViewDelegate {

@@ -248,6 +248,16 @@ class _0PersonalPageViewController: UIViewController {
         photoLibraryLabel.bottomAnchor.constraint(equalTo: separation.topAnchor, constant: -12).isActive = true
         
     }
+    
+//    public func downloadUrlForProfilePicture(
+//        path: String,
+//        completion: @escaping (URL?) -> Void
+//    ) {
+//        Storage.storage().reference(withPath: path)
+//            .downloadURL { url, _ in
+//                completion(url)
+//            }
+//    }
 
     @objc func hidePersonalPage(){
         photoContainerView.isHidden = false
@@ -268,6 +278,36 @@ class _0PersonalPageViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
+    
+//    func uploadUserProfilePicture(email: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
+//        guard let pngData = image?.pngData() else { return  }
+//        Storage.storage().reference(withPath: "profile_pictures/\(email)/photo.png")
+//            .putData(pngData, metadata: nil) { metadata, error in
+//                guard metadata != nil, error == nil else {
+//                    completion(false)
+//                    return
+//                }
+//                completion(true)
+//            }
+//    }
+//    
+//    func updateProfilePhoto(email: String, completion: @escaping (Bool) -> Void){
+//        print("Code go here")
+//        let photoReference = "profile_pictures/\(email)/photo.png"
+//        let db = Firestore.firestore()
+//        let collection = db.collection("User")
+//        let document = collection.document(email)
+//        document.getDocument { snapshot, error in
+//            guard var data = snapshot?.data(), error == nil else {
+//                return
+//            }
+//            data["profile_photo"] = photoReference
+//            document.setData(data) { error in
+//                completion(error == nil)
+//            }
+//        }
+//    }
+
     
 }
 

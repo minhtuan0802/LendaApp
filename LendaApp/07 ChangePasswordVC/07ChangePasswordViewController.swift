@@ -103,7 +103,7 @@ class _7ChangePasswordViewController: UIViewController {
                         }
                     }
                 } else {
-                    self.view.makeToast("Mật khẩu ít nhất có 6 ký tự!")
+                    self.view.makeToast(error?.localizedDescription)
                 }
                 ProgressHUD.dismiss()
             })
