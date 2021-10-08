@@ -6,10 +6,13 @@
 # Project gồm 2 phần chính: 
 **- 1. Thao tác đăng nhập, đăng ký, thay đổi mật khẩu, lấy lại mật khẩu..**
 - Màn hình Slash
+
   <img width="325" src="https://user-images.githubusercontent.com/76054472/136585962-a0c18fa2-ef34-4996-a3a0-91c0c54a43ac.png">
 - Màn hình Wellcome
+
   <img width="325" src="https://user-images.githubusercontent.com/76054472/136586163-c00a4a5a-c724-46bd-832f-000b9d8f6997.png">
 - Màn hình Login
+
   <img width="325" src="https://user-images.githubusercontent.com/76054472/136586394-9bd224ce-dd6d-43bc-803c-52c5644fac22.png">
 - Màn hình Register
   <img width="325" src="https://user-images.githubusercontent.com/76054472/136586494-98614521-cb38-4d5e-907d-86a75d749f49.png">
