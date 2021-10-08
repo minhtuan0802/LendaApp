@@ -12,9 +12,6 @@ class UserInformation {
     var id = ""
     var name = ""
     var email = ""
-
-    init() {
-        
-    }
-
+    var inforContract: [String: String] = ["LoanFormat": "","LoanAmount": "","InterestRate": "","LoanDuration": "","PayFormat": "","FullName": "","NumberPhone": "","Address": ""]
+    
 }

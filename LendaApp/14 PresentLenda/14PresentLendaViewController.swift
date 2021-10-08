@@ -9,13 +9,8 @@ import UIKit
 
 class _4PresentLendaViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
+    let containerView = UIView().view()
+
     let provisoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -79,6 +74,7 @@ class _4PresentLendaViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isTranslucent = false
+        tabBarController?.tabBar.isTranslucent = true
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)

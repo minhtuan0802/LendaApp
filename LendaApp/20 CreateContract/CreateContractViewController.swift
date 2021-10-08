@@ -6,15 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import ProgressHUD
 
 class CreateContractViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1.00)
-        return view
-    }()
+    let containerView = UIView().view()
     
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -31,26 +28,29 @@ class CreateContractViewController: UIViewController {
         button.setTitle("Tiếp tục", for: .normal)
         button.layer.cornerRadius = 8
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-//        button.addTarget(self, action: #selector(goToHomePageVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(uploadValueToTheFirebase), for: .touchUpInside)
         return button
     }()
 
     
-    let titleLable = ["Hình thức vay","Số tiền cho vay","Lãi suất","Hạn vay","Hình thức trả nợ"]
+    let titleLable = [["Hình thức vay","Số tiền cho vay","Lãi suất","Hạn vay","Hình thức trả nợ"],["Họ tên","Số điện thoại","Địa chỉ"]]
     let unitLable = ["","VNĐ","%","Tháng",""]
-    let inforPersonLable = ["Họ tên","Số điện thoại","Địa chỉ"]
-
+    
+    var inforContract = UserInformation()
+    var arrayValue = ["","","","","","","",""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
+        self.view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1.00)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        tabBarController?.tabBar.shadowImage = UIImage()
+        tabBarController?.tabBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -92,12 +92,34 @@ class CreateContractViewController: UIViewController {
         continueButton.heightAnchor.constraint(equalToConstant: 54).isActive = true
 
     }
+    
+    @objc func uploadValueToTheFirebase() {
+        ProgressHUD.show()
+        guard let user = Auth.auth().currentUser else {return}
+        let dataBase = Firestore.firestore()
+        let userCollection = dataBase.collection("User")
+        let userDocument = userCollection.document(user.uid)
+        let contractInformationCollection = userDocument.collection("ContractInformation")
+        let contractInformationDocument = contractInformationCollection.document(UUID().uuidString)
+        contractInformationDocument.setData(["LoanFormat": arrayValue[0],
+                                         "LoanAmount": arrayValue[1],
+                                         "InterestRate": arrayValue[2],
+                                         "LoanDuration": arrayValue[3],
+                                         "PayFormat": arrayValue[4],
+                                         "FullName": arrayValue[5],
+                                         "NumberPhone": arrayValue[6],
+                                         "Address": arrayValue[7]
+                                        ])
+        ProgressHUD.dismiss()
+        tableView.reloadData()
+        
+    }
 
 }
 
 extension CreateContractViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return titleLable.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -119,33 +141,31 @@ extension CreateContractViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return titleLable.count
-        } else {
-            return inforPersonLable.count
-        }
+        return titleLable[section].count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 68
-//        if indexPath.section == 0 && indexPath.row == 5 {
-//            return 80
-//        } else {
-//            return 68
-//        }
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreateContractUITableViewCell", for: indexPath) as! CreateContractUITableViewCell
+        cell.delegate = self
+        cell.titleLabel.text = titleLable[indexPath.section][indexPath.row]
+        cell.unitLabel.text = unitLable[indexPath.row]
         if indexPath.section == 0 {
-            cell.titleLabel.text = titleLable[indexPath.row]
-            cell.unitLabel.text = unitLable[indexPath.row]
-            return cell
-
+            cell.index = indexPath.row
         } else {
-            cell.titleLabel.text = inforPersonLable[indexPath.row]
-            return cell
-
+            cell.index = indexPath.row + titleLable[0].count
         }
+        cell.textField.text = ""
+        return cell
+    }
+}
+
+
+extension CreateContractViewController: CellCreateContractDelegate {
+    func createContractTextField(value: String, index: Int) {
+        self.arrayValue[index] = value
     }
 }

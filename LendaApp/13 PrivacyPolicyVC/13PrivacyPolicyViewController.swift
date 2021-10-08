@@ -125,6 +125,7 @@ class _3PrivacyPolicyViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isTranslucent = false
+        tabBarController?.tabBar.isTranslucent = true
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)

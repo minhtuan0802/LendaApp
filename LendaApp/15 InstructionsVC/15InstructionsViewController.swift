@@ -9,24 +9,21 @@ import UIKit
 
 class _5InstructionsViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
+    let containerView = UIView().view()
+
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(_5InstructionsTableViewCell.self, forCellReuseIdentifier: "_5InstructionsTableViewCell")
         return tableView
     }()
-    
+
     let instructionLabel = ["Hướng dẫn sử dụng tính năng A", "Hướng dẫn sử dụng tính năng B", "Hướng dẫn sử dụng tính năng C", "Hướng dẫn sử dụng tính năng D"]
-    let contentLabel = ["Quý khách vui lòng đọc kỹ và xác nhận các điều khoản sử dụng phương thức xác thực Soft OTP trong ứng dụng Seamobile App của Ngân hàng TMCP Đông Nam Á (SeABank). Việc sử dụng Soft OTP sẽ được xem là Quý khách đã đồng ý với tất cả những điều khoản và điều kiện sử dụng bên dưới. Vui lòng lưu ý rằng các điều khoản sử dụng có thể được SeABank điều chỉnh mà không cần báo trước theo quy định từng thời kỳ.", "", "", ""]
-    let hideImage = ["showIcon", "hideIcon", "hideIcon", "hideIcon"]
+    var  contentLabel = ["Quý khách vui lòng đọc kỹ và xác nhận các điều khoản sử dụng phương thức xác thực Soft OTP trong ứng dụng Seamobile App của Ngân hàng TMCP Đông Nam Á (SeABank). Việc sử dụng Soft OTP sẽ được xem là Quý khách đã đồng ý với tất cả những điều khoản và điều kiện sử dụng bên dưới. Vui lòng lưu ý rằng các điều khoản sử dụng có thể được SeABank điều chỉnh mà không cần báo trước theo quy định từng thời kỳ.", "", "", ""]
+    var hideImage = ["showIcon", "hideIcon", "hideIcon", "hideIcon"]
     var isShow: [Bool] = [true, false, false, false]
+    @IBOutlet var tableViewImageTapping: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +56,8 @@ class _5InstructionsViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isTranslucent = false
+        tabBarController?.tabBar.isTranslucent = true
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
@@ -93,9 +92,27 @@ extension _5InstructionsViewController: UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "_5InstructionsTableViewCell", for: indexPath) as! _5InstructionsTableViewCell
         cell.instructionLabel.text = instructionLabel[indexPath.row]
         cell.contentLabel.text = contentLabel[indexPath.row]
-        cell.hideImage.image = UIImage(named: hideImage[indexPath.row])
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        tapgesture.numberOfTapsRequired = 1
+        cell.hideImage.isUserInteractionEnabled = true
+        cell.hideImage.addGestureRecognizer(tapgesture)
+        cell.isSelected = true
+        let strImageName = hideImage[indexPath.row]
+        cell.hideImage.image = UIImage(named: strImageName)
+        cell.hideImage.tag = indexPath.row
         return cell
     }
     
-
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let imageView = tapGestureRecognizer.view as! UIImageView
+        isShow[imageView.tag] = !isShow[imageView.tag]
+        if isShow[imageView.tag] == true {
+            hideImage[imageView.tag] = "showIcon"
+            contentLabel[imageView.tag] = "Quý khách vui lòng đọc kỹ và xác nhận các điều khoản sử dụng phương thức xác thực Soft OTP trong ứng dụng Seamobile App của Ngân hàng TMCP Đông Nam Á (SeABank). Việc sử dụng Soft OTP sẽ được xem là Quý khách đã đồng ý với tất cả những điều khoản và điều kiện sử dụng bên dưới. Vui lòng lưu ý rằng các điều khoản sử dụng có thể được SeABank điều chỉnh mà không cần báo trước theo quy định từng thời kỳ."
+        } else {
+            hideImage[imageView.tag] = "hideIcon"
+            contentLabel[imageView.tag] = ""
+        }
+        tableView.reloadData()
+    }
 }

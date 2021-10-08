@@ -10,12 +10,10 @@ import UIKit
 
 class _2WellcomeViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
+    let containerView = UIView().view()
+    let lendaLabel = UILabel().boldFontSize24Label(text: "Lenda - Uy tín, bảo mật")
+    let introduceLabel = UILabel().systemFontSize15Label(text: "With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly.")
+    let startButton = UIButton().button(text: "Bắt đầu ngay!")
 
     let illusImage: UIImageView = {
         let image = UIImageView()
@@ -24,43 +22,12 @@ class _2WellcomeViewController: UIViewController {
         image.contentMode = .scaleAspectFill
         return image
     }()
-    
-    let lendaLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Lenda - Uy tín, bảo mật"
-        label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        return label
-    }()
-    
-    let introduceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly."
-        label.textAlignment = .center
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.numberOfLines = 3
-        return label
-    }()
-    
-    let startButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.84, green: 0.18, blue: 0.18, alpha: 1.00)
-        button.setTitleColor(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00), for: .normal)
-        button.setTitle("Bắt đầu ngay!", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.addTarget(self, action: #selector(goToLoginVC), for: .touchUpInside)
-        return button
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupLayout()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +37,8 @@ class _2WellcomeViewController: UIViewController {
     }
     
     func setupLayout() {
+        startButton.addTarget(self, action: #selector(goToLoginVC), for: .touchUpInside)
+
         self.view.addSubview(containerView)
         containerView.addSubview(illusImage)
         containerView.addSubview(lendaLabel)

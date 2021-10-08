@@ -26,6 +26,11 @@
 		CB24052C26A3C14500458244 /* 15InstructionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24052B26A3C14500458244 /* 15InstructionsTableViewCell.swift */; };
 		CB4B955926A1226A003C3084 /* 08HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B955826A1226A003C3084 /* 08HomePageTableViewCell.swift */; };
 		CB4DEBFA26CF554200F8C4BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */; };
+		CB55CAF8270F4ACF001AEF7C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55CAF7270F4ACF001AEF7C /* UIColor.swift */; };
+		CB55CAFA270F4AED001AEF7C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55CAF9270F4AED001AEF7C /* UIButton.swift */; };
+		CB55CAFC270F4B08001AEF7C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55CAFB270F4B08001AEF7C /* UITextField.swift */; };
+		CB55CAFE270F55AE001AEF7C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55CAFD270F55AE001AEF7C /* UILabel.swift */; };
+		CB55CB00270F5D3B001AEF7C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB55CAFF270F5D3B001AEF7C /* UIView.swift */; };
 		CB7AD81426A522A2002A2122 /* 16ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD81326A522A2002A2122 /* 16ProfileViewController.swift */; };
 		CB7AD81626A522B7002A2122 /* 16ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD81526A522B7002A2122 /* 16ProfileTableViewCell.swift */; };
 		CB974FBD269AA11200ACFB3D /* 05ForgotPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB974FBC269AA11200ACFB3D /* 05ForgotPassWordViewController.swift */; };
@@ -69,6 +74,11 @@
 		CB24052B26A3C14500458244 /* 15InstructionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15InstructionsTableViewCell.swift; sourceTree = "<group>"; };
 		CB4B955826A1226A003C3084 /* 08HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB55CAF7270F4ACF001AEF7C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CB55CAF9270F4AED001AEF7C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		CB55CAFB270F4B08001AEF7C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		CB55CAFD270F55AE001AEF7C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		CB55CAFF270F5D3B001AEF7C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CB7AD81326A522A2002A2122 /* 16ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16ProfileViewController.swift; sourceTree = "<group>"; };
 		CB7AD81526A522B7002A2122 /* 16ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CB974FBC269AA11200ACFB3D /* 05ForgotPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05ForgotPassWordViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +145,7 @@
 				CB15AAE726999E660022FEB1 /* ViewController.swift */,
 				CB15AAE926999E660022FEB1 /* Main.storyboard */,
 				CB15AAEC26999E680022FEB1 /* Assets.xcassets */,
+				CB83B300270F4A42005EA80D /* Extension */,
 				CBA73F3C26F5A6520005154C /* Model */,
 				CB4DEBFB26CF5DBE00F8C4BC /* 01SlashVC */,
 				CB4DEBFC26CF5E0200F8C4BC /* 02 WellcomeVC */,
@@ -313,6 +324,18 @@
 			path = "23 HistoryLoanAmountVC";
 			sourceTree = "<group>";
 		};
+		CB83B300270F4A42005EA80D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB55CAF7270F4ACF001AEF7C /* UIColor.swift */,
+				CB55CAFF270F5D3B001AEF7C /* UIView.swift */,
+				CB55CAF9270F4AED001AEF7C /* UIButton.swift */,
+				CB55CAFB270F4B08001AEF7C /* UITextField.swift */,
+				CB55CAFD270F55AE001AEF7C /* UILabel.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		CBA73F3C26F5A6520005154C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,8 +372,8 @@
 				CB15AADC26999E660022FEB1 /* Sources */,
 				CB15AADD26999E660022FEB1 /* Frameworks */,
 				CB15AADE26999E660022FEB1 /* Resources */,
-				CFB03C416AC0D2AF4D410BFD /* [CP] Embed Pods Frameworks */,
-				7DBB3843CFBE1A9669E289F0 /* [CP] Copy Pods Resources */,
+				9B01D32F5BC14F29282DC1AA /* [CP] Embed Pods Frameworks */,
+				EE573DAF79CEF1A0E820F5E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -430,24 +453,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7DBB3843CFBE1A9669E289F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CFB03C416AC0D2AF4D410BFD /* [CP] Embed Pods Frameworks */ = {
+		9B01D32F5BC14F29282DC1AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -464,6 +470,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE573DAF79CEF1A0E820F5E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LendaApp/Pods-LendaApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -476,14 +499,18 @@
 				CBEE7A7B269FD9A80053C10D /* 07ChangePasswordViewController.swift in Sources */,
 				CB974FBF269AA15B00ACFB3D /* 06AccuracyOTPViewController.swift in Sources */,
 				CB15AAE426999E660022FEB1 /* AppDelegate.swift in Sources */,
+				CB55CAF8270F4ACF001AEF7C /* UIColor.swift in Sources */,
 				CBB966E826A97D46008E7EA7 /* 18DetailsNotificationViewController.swift in Sources */,
 				CB24052C26A3C14500458244 /* 15InstructionsTableViewCell.swift in Sources */,
+				CB55CAFA270F4AED001AEF7C /* UIButton.swift in Sources */,
 				CB4B955926A1226A003C3084 /* 08HomePageTableViewCell.swift in Sources */,
 				CBB966E626A96C10008E7EA7 /* 17NotificationTableViewCell.swift in Sources */,
 				CB15AAF926999ECB0022FEB1 /* 01SplashViewController.swift in Sources */,
 				CB168BBC26A2DFDE00F292F3 /* 12SupportViewController.swift in Sources */,
 				CB15AAE626999E660022FEB1 /* SceneDelegate.swift in Sources */,
 				CBB4124B26A31F78002B2717 /* 13PrivacyPolicyViewController.swift in Sources */,
+				CB55CAFC270F4B08001AEF7C /* UITextField.swift in Sources */,
+				CB55CB00270F5D3B001AEF7C /* UIView.swift in Sources */,
 				CBB966E426A96BE6008E7EA7 /* 17NotificationViewController.swift in Sources */,
 				CB15AAFE2699DA910022FEB1 /* 02WellcomeViewController.swift in Sources */,
 				CBCC441C26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift in Sources */,
@@ -498,6 +525,7 @@
 				CBF459EB26FD808800D3D497 /* CreateContractViewController.swift in Sources */,
 				CB974FBD269AA11200ACFB3D /* 05ForgotPassWordViewController.swift in Sources */,
 				CB168BBE26A2E00200F292F3 /* 12SupportTableViewCell.swift in Sources */,
+				CB55CAFE270F55AE001AEF7C /* UILabel.swift in Sources */,
 				CBEE7A7D269FD9C40053C10D /* 08HomePageViewController.swift in Sources */,
 				CBF459ED26FD80FA00D3D497 /* CreateContractUITableViewCell.swift in Sources */,
 				CBAB9BA226A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift in Sources */,
@@ -651,6 +679,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LendaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,6 +699,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LendaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

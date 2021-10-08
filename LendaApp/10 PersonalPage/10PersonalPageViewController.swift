@@ -11,16 +11,9 @@ import ProgressHUD
 
 
 class _0PersonalPageViewController: UIViewController {
-    
-    var userInformation = UserInformation()
-    
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
+        
+    let containerView = UIView().view()
+
     let informationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +66,8 @@ class _0PersonalPageViewController: UIViewController {
         return tableView
     }()
     
+    var userInformation = UserInformation()
+
     let infomationSection1 = ["Hỗ trợ", "Điều Khoản & Bảo Mật", "Giới thiệu về Lenda", "Hướng dẫn"]
     let infomationSection2 = ["Hồ sơ", "Cài Đặt", "Đăng xuất"]
     
@@ -154,7 +149,8 @@ class _0PersonalPageViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        tabBarController?.tabBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.titleTextAttributes = [
@@ -162,10 +158,8 @@ class _0PersonalPageViewController: UIViewController {
             .font: UIFont.boldSystemFont(ofSize: 18)
         ]
         appearance.backgroundColor = UIColor(red: 0.84, green: 0.18, blue: 0.18, alpha: 1.00)
-        navigationController?.navigationBar.isTranslucent = false
         navigationItem.title = "Thông tin nhà đầu tư"
         navigationController?.navigationBar.tintColor = UIColor.white
-//        UINavigationBar.appearance().shadowImage = UIImage()
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         
@@ -385,8 +379,4 @@ extension _0PersonalPageViewController: UIImagePickerControllerDelegate, UINavig
         avatarImage.image = image
         picker.dismiss(animated: true, completion: nil)
     }
-//    
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
-//    }
 }

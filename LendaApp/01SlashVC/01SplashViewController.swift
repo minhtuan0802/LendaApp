@@ -9,12 +9,7 @@ import UIKit
 
 class _1SplashViewController: UIViewController {
     var timer: Timer!
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
+    let containerView = UIView().view()
     
     let lendaImage: UIImageView = {
         let image = UIImageView()
@@ -55,8 +50,7 @@ class _1SplashViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         setupLayout()
-//        navigationItem.title = "aaa"
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runSplash), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runSplash), userInfo: nil, repeats: true)
     }
 
     func setupLayout() {

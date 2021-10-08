@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import ProgressHUD
 
 class _8HomePageViewController: UIViewController {
     
@@ -23,15 +25,22 @@ class _8HomePageViewController: UIViewController {
         tableView.register(_8HomePageTableViewCell.self, forCellReuseIdentifier: "_8HomePageTableViewCell")
         return tableView
     }()
-
+    
+    var contract = UserInformation()
+    var arrContract = [[String : String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
-
+        fetchData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
 
     }
     
@@ -56,8 +65,6 @@ class _8HomePageViewController: UIViewController {
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        
-
     }
     
     func setupLayout() {
@@ -79,6 +86,32 @@ class _8HomePageViewController: UIViewController {
         let notificationVC = _7NotificationViewController()
         navigationController?.pushViewController(notificationVC, animated: true)
     }
+    
+    func fetchData(){
+        guard let user = Auth.auth().currentUser else {return}
+        let db = Firestore.firestore()
+        let userCollection = db.collection("User")
+        let userDocument = userCollection.document(user.uid)
+        let contractInformationCollection = userDocument.collection("ContractInformation")
+        arrContract.removeAll()
+        contractInformationCollection.addSnapshotListener { [self] query, err in
+            if err != nil {return}
+            for i in query!.documents {
+                self.contract.inforContract["LoanFormat"] = i.get("LoanFormat") as? String ?? ""
+                self.contract.inforContract["LoanAmount"] = i.get("LoanAmount") as? String ?? "" + "VNĐ"
+                self.contract.inforContract["InterestRate"] = i.get("InterestRate") as? String ?? "" + "%/Năm"
+                self.contract.inforContract["LoanDuration"] = i.get("LoanDuration") as? String ?? "" + " Tháng"
+                self.contract.inforContract["PayFormat"] = i.get("PayFormat") as? String ?? ""
+                self.contract.inforContract["FullName"] = i.get("FullName") as? String ?? ""
+                self.contract.inforContract["NumberPhone"] = i.get("NumberPhone") as? String ?? ""
+                self.contract.inforContract["Address"] = i.get("Address") as? String ?? ""
+                arrContract.append(contract.inforContract)
+            }
+            tableView.reloadData()
+        }
+    }
+
+
 }
 
 extension _8HomePageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -86,18 +119,27 @@ extension _8HomePageViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arrContract.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "_8HomePageTableViewCell", for: indexPath) as! _8HomePageTableViewCell
         cell.selectionStyle = .none
+        cell.moneyNumberLabel.text = arrContract[indexPath.row]["LoanAmount"]
+        cell.interestRateNumberLabel.text = arrContract[indexPath.row]["InterestRate"]
+        cell.term.text = arrContract[indexPath.row]["LoanDuration"]
+        cell.formality.text = arrContract[indexPath.row]["LoanFormat"]
+        cell.address.text = arrContract[indexPath.row]["Address"]
+        cell.nameLabel.text = arrContract[indexPath.row]["FullName"]
         return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let investmentDetailsVC = _9InvestmentDetailsViewController()
+        investmentDetailsVC.arrayValue = arrContract[indexPath.row]
         navigationController?.pushViewController(investmentDetailsVC, animated: true)
+
     }
 }
 

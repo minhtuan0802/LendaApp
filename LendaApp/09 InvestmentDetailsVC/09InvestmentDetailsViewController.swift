@@ -9,13 +9,10 @@ import UIKit
 
 class _9InvestmentDetailsViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
+    var arrayValue = [String : String]()
     
+    let containerView = UIView().view()
+
     let statusLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +52,6 @@ class _9InvestmentDetailsViewController: UIViewController {
     let moneyNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "20,000,000 VND"
         label.textColor = UIColor(red: 0.84, green: 0.18, blue: 0.18, alpha: 1.00)
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
@@ -105,7 +101,6 @@ class _9InvestmentDetailsViewController: UIViewController {
     let gainsNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "18%/năm"
         label.textColor = UIColor(red: 0.20, green: 0.66, blue: 0.99, alpha: 1.00)
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
@@ -231,7 +226,6 @@ class _9InvestmentDetailsViewController: UIViewController {
     let term: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "10 tháng"
         label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -240,7 +234,6 @@ class _9InvestmentDetailsViewController: UIViewController {
     let formality: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cầm ô tô ngân hàng"
         label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -249,7 +242,6 @@ class _9InvestmentDetailsViewController: UIViewController {
     let payment: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Dư nợ giảm dần"
         label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -270,6 +262,7 @@ class _9InvestmentDetailsViewController: UIViewController {
 
         setupLayout()
         self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1.00)
+        print(arrayValue)
         
     }
     
@@ -288,6 +281,14 @@ class _9InvestmentDetailsViewController: UIViewController {
     }
     
     func setupLayout() {
+        moneyNumberLabel.text = arrayValue["LoanAmount"]
+        gainsNumberLabel.text = arrayValue["InterestRate"]
+        term.text = arrayValue["LoanDuration"]
+        formality.text = arrayValue["LoanFormat"]
+        payment.text = arrayValue["PayFormat"]
+        address.text = arrayValue["Address"]
+
+
         self.view.addSubview(containerView)
         containerView.addSubview(statusLabel)
         containerView.addSubview(approveButton)

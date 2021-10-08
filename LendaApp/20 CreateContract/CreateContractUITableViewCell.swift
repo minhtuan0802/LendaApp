@@ -7,16 +7,16 @@
 
 import UIKit
 
-class CreateContractUITableViewCell: UITableViewCell {
+protocol CellCreateContractDelegate: AnyObject {
+    func createContractTextField(value: String, index :Int)
+
+}
+
+class CreateContractUITableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
-    let titleTextField: UITextField = {
+    let containerView = UIView().view()
+
+    let textField: UITextField = {
         let textField =  UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
@@ -48,6 +48,9 @@ class CreateContractUITableViewCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
+    
+    var delegate: CellCreateContractDelegate?
+    var index = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,30 +61,44 @@ class CreateContractUITableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         setupLayout()
+        textField.delegate = self
     }
     
     func setupLayout() {
         self.addSubview(containerView)
-        containerView.addSubview(titleTextField)
-        titleTextField.addSubview(titleLabel)
-        titleTextField.addSubview(unitLabel)
+        containerView.addSubview(textField)
+        textField.addSubview(titleLabel)
+        textField.addSubview(unitLabel)
         
         containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
         
-        titleTextField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12).isActive = true
-        titleTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16).isActive = true
-        titleTextField.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
-        titleTextField.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6).isActive = true
+        textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -6).isActive = true
+        textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16).isActive = true
+        textField.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: titleTextField.topAnchor, constant: 9).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor, constant: 16).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: textField.topAnchor, constant: 9).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor, constant: 16).isActive = true
         
-        unitLabel.bottomAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: -8).isActive = true
-        unitLabel.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor, constant: -16).isActive = true
-
+        unitLabel.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: -8).isActive = true
+        unitLabel.trailingAnchor.constraint(equalTo: textField.trailingAnchor, constant: -16).isActive = true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.createContractTextField(value: textField.text ?? "", index: self.index)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate?.createContractTextField(value: textField.text ?? "", index: self.index)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
 
 }
+

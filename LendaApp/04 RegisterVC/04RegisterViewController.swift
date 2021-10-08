@@ -12,115 +12,16 @@ import Toast_Swift
 
 class _4RegisterViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
-    let numberPhoneTextField: UITextField = {
-        let textField =  UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = CGColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        textField.layer.cornerRadius = 8
-        textField.layer.opacity = 1
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        textField.contentVerticalAlignment = .bottom
-        return textField
-    }()
-    
-    let nameTextField: UITextField = {
-        let textField =  UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = CGColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        textField.layer.opacity = 1
-        textField.layer.cornerRadius = 8
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        textField.contentVerticalAlignment = .bottom
-        return textField
-    }()
-    
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Họ Tên"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 3
-        return label
-    }()
-    
-    let numberPhoneLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 12)
-        return label
-    }()
-    
-    let registerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Đăng ký"
-        label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        return label
-    }()
-    
-    let noteLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nhập thông tin để Đăng ký tài khoản Lenda!"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.numberOfLines = 3
-        return label
-    }()
-        
-    let passwordTextField: UITextField = {
-        let textField =  UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = CGColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        textField.layer.cornerRadius = 8
-        textField.layer.opacity = 1
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        textField.contentVerticalAlignment = .bottom
-        return textField
-    }()
-    
-    let passwordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Mật khẩu"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 3
-        return label
-    }()
-    
-    let registerButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.84, green: 0.18, blue: 0.18, alpha: 1.00)
-        button.setTitleColor(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00), for: .normal)
-        button.setTitle("Đăng ký", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.addTarget(self, action: #selector(goToAccuracyOTPVC), for: .touchUpInside)
-        return button
-    }()
+    let containerView = UIView().view()
+    let registerLabel = UILabel().boldFontSize24Label(text: "Đăng ký")
+    let noteLabel = UILabel().systemFontSize15Label(text: "Nhập thông tin để Đăng ký tài khoản Lenda!")
+    let registerButton = UIButton().button(text: "Đăng ký")
+    let passwordTextField = UITextField().textField(isSecureTextEntry: true)
+    let numberPhoneTextField = UITextField().textField(isSecureTextEntry: false)
+    let nameTextField = UITextField().textField(isSecureTextEntry: false)
+    let nameLabel = UILabel().labelTextField(text: "Họ Tên")
+    let numberPhoneLabel = UILabel().labelTextField(text: "Email")
+    let passwordLabel = UILabel().labelTextField(text: "Mật khẩu")
     
     let loginLabel: UILabel = {
         let label = UILabel()
@@ -132,13 +33,20 @@ class _4RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupLayout()
+        
+    }
+    
+    func setupLayout() {
+        // action Button
+        registerButton.addTarget(self, action: #selector(goToAccuracyOTPVC), for: .touchUpInside)
+        
         //setup Textfield
-        leftName(nameTextField, "name")
-        leftNumberPhone(numberPhoneTextField, "numberPhone")
-        leftPassWord(passwordTextField, "password")
-        rightPassWord(passwordTextField, "eye")
+        UITextField().leftTextField(nameTextField, "name")
+        UITextField().leftTextField(numberPhoneTextField, "numberPhone")
+        UITextField().leftTextField(passwordTextField, "password")
+        UITextField().rightTextField(passwordTextField, "eye")
         
         // setup register lable
         loginLabel.numberOfLines = 0
@@ -151,7 +59,7 @@ class _4RegisterViewController: UIViewController {
         
         fontArray.append(UIFont.systemFont(ofSize: 16))
         fontArray.append(UIFont.boldSystemFont(ofSize: 16))
-
+        
         colorArray.append(UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00))
         colorArray.append(UIColor(red: 0.00, green: 0.54, blue: 1.00, alpha: 1.00))
         
@@ -161,9 +69,7 @@ class _4RegisterViewController: UIViewController {
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(goBackLoginVC))
         tapgesture.numberOfTapsRequired = 1
         self.loginLabel.addGestureRecognizer(tapgesture)
-    }
-    
-    func setupLayout() {
+        
         self.view.addSubview(containerView)
         containerView.addSubview(numberPhoneTextField)
         numberPhoneTextField.addSubview(numberPhoneLabel)
@@ -223,62 +129,6 @@ class _4RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-    }
-    
-    func leftName(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let separationView = UIView(frame: CGRect(x: 56, y: 10, width: 1, height: 36))
-        separationView.backgroundColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        view.addSubview(separationView)
-        texField.leftViewMode = .always
-        texField.leftView = view
-    }
-    
-    func leftNumberPhone(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let separationView = UIView(frame: CGRect(x: 56, y: 10, width: 1, height: 36))
-        separationView.backgroundColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        view.addSubview(separationView)
-        texField.leftViewMode = .always
-        texField.leftView = view
-    }
-    
-    func leftPassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let separationView = UIView(frame: CGRect(x: 56, y: 10, width: 1, height: 36))
-        separationView.backgroundColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        view.addSubview(separationView)
-        texField.leftViewMode = .always
-        texField.leftView = view
-    }
-    
-    func rightPassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        texField.rightViewMode = .always
-        texField.rightView = view
     }
     
     @objc func goToAccuracyOTPVC(){
@@ -353,7 +203,7 @@ class _4RegisterViewController: UIViewController {
         return finalAttributedString
     }
     
-
+    
 }
 
 extension UITapGestureRecognizer {

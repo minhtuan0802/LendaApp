@@ -12,103 +12,20 @@ import Toast_Swift
 
 class _7ChangePasswordViewController: UIViewController {
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        return view
-    }()
-    
-    let enterThePasswordTextField: UITextField = {
-        let textField =  UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = CGColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        textField.layer.cornerRadius = 8
-        textField.layer.opacity = 1
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        textField.contentVerticalAlignment = .bottom
-        return textField
-    }()
-    
-    let enterThePasswordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nhập lại mật khẩu mới"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 3
-        return label
-    }()
-    
-    let passwordTextField: UITextField = {
-        let textField =  UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = CGColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        textField.layer.cornerRadius = 8
-        textField.layer.opacity = 1
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        textField.contentVerticalAlignment = .bottom
-        return textField
-    }()
-    
-    let passwordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Mật khẩu mới"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 3
-        return label
-    }()
-    
-    let changePassWordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Đổi mật khẩu"
-        label.textColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        return label
-    }()
-    
-    let noteLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nhập mật khẩu Đăng nhập mới của bạn nhé!"
-        label.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
-        label.font = UIFont.systemFont(ofSize: 15)
-        return label
-    }()
-    
-    let saveButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.84, green: 0.18, blue: 0.18, alpha: 1.00)
-        button.setTitleColor(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00), for: .normal)
-        button.setTitle("Lưu lại", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.addTarget(self, action: #selector(goBackPersonalPage), for: .touchUpInside)
-        return button
-    }()
-    
+    let containerView = UIView().view()
+    let changePassWordLabel = UILabel().boldFontSize24Label(text: "Đổi mật khẩu")
+    let noteLabel = UILabel().systemFontSize15Label(text: "Nhập mật khẩu Đăng nhập mới của bạn nhé!")
+    let saveButton = UIButton().button(text: "Lưu lại")
+    let passwordTextField = UITextField().textField(isSecureTextEntry: true)
+    let enterThePasswordTextField = UITextField().textField(isSecureTextEntry: true)
+    let enterThePasswordLabel = UILabel().labelTextField(text: "Nhập lại mật khẩu mới")
+    let passwordLabel = UILabel().labelTextField(text: "Mật khẩu mới")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
-        
-        leftEnterThePassWord(enterThePasswordTextField, "password")
-        rightEnterThePassWord(enterThePasswordTextField, "eye")
-        leftPassWord(passwordTextField, "password")
-        rightPassWord(passwordTextField, "eye")
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +35,16 @@ class _7ChangePasswordViewController: UIViewController {
     }
     
     func setupLayout() {
+        // action Button
+        saveButton.addTarget(self, action: #selector(goBackPersonalPage), for: .touchUpInside)
+        
+        // setup TextField
+        UITextField().leftTextField(enterThePasswordTextField, "password")
+        UITextField().rightTextField(enterThePasswordTextField, "eye")
+        UITextField().leftTextField(passwordTextField, "password")
+        UITextField().rightTextField(passwordTextField, "eye")
+        
+        // Autolayout
         self.view.addSubview(containerView)
         containerView.addSubview(enterThePasswordTextField)
         enterThePasswordTextField.addSubview(enterThePasswordLabel)
@@ -161,58 +88,6 @@ class _7ChangePasswordViewController: UIViewController {
         saveButton.topAnchor.constraint(equalTo: enterThePasswordTextField.bottomAnchor, constant: 40).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 54).isActive = true
         
-    }
-    
-    func leftEnterThePassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let separationView = UIView(frame: CGRect(x: 56, y: 10, width: 1, height: 36))
-        separationView.backgroundColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        view.addSubview(separationView)
-        texField.leftViewMode = .always
-        texField.leftView = view
-    }
-    
-    func rightEnterThePassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        texField.rightViewMode = .always
-        texField.rightView = view
-    }
-    
-    func leftPassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let separationView = UIView(frame: CGRect(x: 56, y: 10, width: 1, height: 36))
-        separationView.backgroundColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        view.addSubview(separationView)
-        texField.leftViewMode = .always
-        texField.leftView = view
-    }
-    
-    func rightPassWord(_ texField: UITextField, _ nameImage: String) {
-        let imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 24, height: 24))
-        imageView.image = UIImage(named: nameImage)
-        imageView.contentMode = .scaleAspectFill
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
-        view.addSubview(imageView)
-        texField.rightViewMode = .always
-        texField.rightView = view
     }
     
     @objc func goBackPersonalPage() {
