@@ -7,6 +7,10 @@
 
 import UIKit
 
+//protocol CellIntructionDelegate: AnyObject {
+//    func hideActionButton()
+//}
+
 class _5InstructionsTableViewCell: UITableViewCell {
     
     let containerView: UIView = {
@@ -41,19 +45,25 @@ class _5InstructionsTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
+    
+//    var delegate: CellIntructionDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         setupLayout()
+//        self.hideImage.isUserInteractionEnabled = true
+//        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(hideLabel))
+//        tapgesture.numberOfTapsRequired = 1
+//        self.hideImage.addGestureRecognizer(tapgesture)
         
     }
-    
+
     func setupLayout() {
         self.addSubview(containerView)
         containerView.addSubview(instructionLabel)
@@ -79,5 +89,9 @@ class _5InstructionsTableViewCell: UITableViewCell {
         contentLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -17).isActive = true
 
     }
+    
+//    @objc func hideLabel() {
+//
+//    }
 
 }
