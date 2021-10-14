@@ -1,9 +1,4 @@
-//
-//  12SupportViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 17/07/2021.
-//
+
 
 import UIKit
 

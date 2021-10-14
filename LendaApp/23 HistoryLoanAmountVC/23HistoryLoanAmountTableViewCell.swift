@@ -1,9 +1,3 @@
-//
-//  23HistoryLoanAmountTableViewCell.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 21/07/2021.
-//
 
 import UIKit
 

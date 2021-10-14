@@ -1,9 +1,4 @@
-//
-//  09InvestmentDetailsViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 16/07/2021.
-//
+
 
 import UIKit
 

@@ -1,9 +1,3 @@
-//
-//  05ForgotPassWordViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 11/07/2021.
-//
 
 import UIKit
 import Firebase
@@ -18,11 +12,11 @@ class _5ForgotPassWordViewController: UIViewController {
     let numberPhoneTextField = UITextField().textField(isSecureTextEntry: false)
     let numberPhoneLabel = UILabel().labelTextField(text: "Email")
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupLayout()
-        
 
     }
     
@@ -71,20 +65,22 @@ class _5ForgotPassWordViewController: UIViewController {
     }
     
     @objc func goToChangePasswordVC(){
-        ProgressHUD.show()
         Auth.auth().sendPasswordReset(withEmail: numberPhoneTextField.text!) { err in
             if err == nil {
-                for item in self.navigationController!.viewControllers {
-                    if let loginVC = item as? _3LoginViewController {
-                        self.navigationController?.popToViewController(loginVC, animated: true)
+                let alert = UIAlertController(title: "Thông báo", message: "Truy cập Email để đổi mật khẩu!", preferredStyle: .alert)
+                let alertActionOk = UIAlertAction(title: "OK", style: .default) { act in
+                    for item in self.navigationController!.viewControllers {
+                        if let loginVC = item as? _3LoginViewController {
+                            self.navigationController?.popToViewController(loginVC, animated: true)
+                        }
                     }
                 }
+                alert.addAction(alertActionOk)
+                self.present(alert, animated: true, completion: nil)
             } else {
                 self.view.makeToast("Email không đúng định dạng!")
             }
-            ProgressHUD.dismiss()
         }
-
     }
 
 }

@@ -1,9 +1,4 @@
-//
-//  03LoginViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 10/07/2021.
-//
+
 
 import UIKit
 import Firebase
@@ -41,9 +36,6 @@ class _3LoginViewController: UIViewController {
         super.viewDidLoad()
 
         setupLayout()
-        
-        numberPhoneTextField.text = "a@gmail.com"
-        passWordTextField.text = "666666"
  
     }
     
@@ -106,7 +98,7 @@ class _3LoginViewController: UIViewController {
         containerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
         passWordTextField.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
-        passWordTextField.bottomAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -12).isActive = true
+        passWordTextField.bottomAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -80).isActive = true
         passWordTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24).isActive = true
         passWordTextField.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
@@ -128,7 +120,7 @@ class _3LoginViewController: UIViewController {
         loginLabel.bottomAnchor.constraint(equalTo: noteLabel.topAnchor, constant: -8).isActive = true
         
         forgotPasswordLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
-        forgotPasswordLabel.topAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 12).isActive = true
+        forgotPasswordLabel.topAnchor.constraint(equalTo: passWordTextField.bottomAnchor, constant: 24).isActive = true
         
         loginButton.centerXAnchor.constraint(equalTo: passWordTextField.centerXAnchor, constant: 0).isActive = true
         loginButton.topAnchor.constraint(equalTo: forgotPasswordLabel.bottomAnchor, constant: 42).isActive = true
@@ -180,7 +172,7 @@ class _3LoginViewController: UIViewController {
         let investVC = UINavigationController(rootViewController: invest)
         invest.tabBarItem = UITabBarItem(title: "Đầu tư", image: UIImage(named: "invest"), tag: 0)
         
-        let history = _3HistoryLoanAmountViewController()
+        let history = TimeEvictionViewController()
         let historyVC = UINavigationController(rootViewController: history)
         history.tabBarItem = UITabBarItem(title: "Lịch sử", image: UIImage(named: "history"), tag: 0)
         

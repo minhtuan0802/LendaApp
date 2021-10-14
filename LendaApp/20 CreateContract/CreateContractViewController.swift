@@ -1,9 +1,4 @@
-//
-//  CreateContractViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 24/09/2021.
-//
+
 
 import UIKit
 import Firebase

@@ -1,9 +1,4 @@
-//
-//  04RegisterViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 11/07/2021.
-//
+
 
 import UIKit
 import Firebase
@@ -88,7 +83,7 @@ class _4RegisterViewController: UIViewController {
         containerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
         numberPhoneTextField.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
-        numberPhoneTextField.bottomAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -16).isActive = true
+        numberPhoneTextField.bottomAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -110).isActive = true
         numberPhoneTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24).isActive = true
         numberPhoneTextField.heightAnchor.constraint(equalToConstant: 56).isActive = true
         

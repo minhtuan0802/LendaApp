@@ -1,9 +1,4 @@
-//
-//  17NotificationTableViewCell.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 22/07/2021.
-//
+
 
 import UIKit
 

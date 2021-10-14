@@ -1,9 +1,4 @@
-//
-//  16ProfileViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 19/07/2021.
-//
+
 
 import UIKit
 
@@ -139,7 +134,6 @@ class _6ProfileViewController: UIViewController {
         return label
     }()
 
-    
     let contenLabel = ["Họ tên", "Số điện thoại", "Giới tính", "Ngày sinh", "Quê quán", "Thường trú", "Công ty"]
     let valueLabel = ["Nguyễn Hoàng Minh Anh", "0988522939", "Nam", "13/04/1993", "Hoàng Liệt, Hoàng Mai, Hà Nội", "Nguyễn Xiển, Hạ Đình, Thanh Xuân, Hà Nội", "LTS Software Việt Nam"]
 

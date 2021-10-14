@@ -1,9 +1,4 @@
-//
-//  02WellcomeViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 10/07/2021.
-//
+
 
 import UIKit
 

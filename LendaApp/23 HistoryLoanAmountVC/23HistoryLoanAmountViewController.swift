@@ -1,14 +1,10 @@
-//
-//  23HistoryLoanAmountViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 21/07/2021.
-//
+
 
 import UIKit
 
 class _3HistoryLoanAmountViewController: UIViewController {
-    
+    var arrayValue = [String : String]()
+
     let containerView = UIView().view()
 
     let contentView: UIView = {
@@ -184,7 +180,7 @@ class _3HistoryLoanAmountViewController: UIViewController {
     
     let dateLabel = ["14/10/2020", "14/09/2020", "14/08/2020", "14/07/2020", "13/07/2020", "11/07/2020"]
     let contentlabel = ["Chưa đến hạn", "Sắp đến hạn", "Đã thanh toán", "Đã giải ngân", "Đã duyệt", "Yêu cầu vay"]
-    let dateColor = [UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00), UIColor(red: 0.99, green: 0.31, blue: 0.30, alpha: 1.00), UIColor(red: 0.15, green: 0.68, blue: 0.38, alpha: 1.00), UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00), UIColor(red: 0.15, green: 0.68, blue: 0.38, alpha: 1.00),  UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00) ]
+    let dateColor = [UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00), UIColor(red: 0.99, green: 0.31, blue: 0.30, alpha: 1.00), UIColor(red: 0.15, green: 0.68, blue: 0.38, alpha: 1.00), UIColor(red: 0.15, green: 0.68, blue: 0.38, alpha: 1.00), UIColor(red: 0.15, green: 0.68, blue: 0.38, alpha: 1.00),  UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00) ]
     
     
     override func viewDidLoad() {
@@ -201,9 +197,9 @@ class _3HistoryLoanAmountViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
-        tabBarController?.tabBar.isHidden = false
-        tabBarController?.tabBar.shadowImage = UIImage()
+        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isTranslucent = false
+        tabBarController?.tabBar.isTranslucent = true
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
@@ -211,18 +207,20 @@ class _3HistoryLoanAmountViewController: UIViewController {
             .foregroundColor: UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00),
             .font: UIFont.boldSystemFont(ofSize: 18)
         ]
-        navigationController?.navigationBar.isTranslucent = false
-        tabBarController?.tabBar.isTranslucent = false
-        navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.title = "Lịch sử khoản vay"
-
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor(red: 0.07, green: 0.15, blue: 0.29, alpha: 1.00)
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "BackIcon")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "BackIcon")
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-
-        
     }
 
     func setuplayout() {
+        gainsNumberLabel.text = arrayValue["InterestRate"]
+        moneyNumberLabel.text = arrayValue["LoanAmount"]
         view.addSubview(containerView)
         containerView.addSubview(contentView)
         contentView.addSubview(statusLabel)
@@ -246,7 +244,7 @@ class _3HistoryLoanAmountViewController: UIViewController {
         containerView.addSubview(tableView)
         
         containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         
@@ -344,7 +342,7 @@ extension _3HistoryLoanAmountViewController: UITableViewDataSource, UITableViewD
         cell.contentLabel.text = contentlabel[indexPath.row]
         cell.dateLabel.textColor = dateColor[indexPath.row]
         cell.contentLabel.textColor = dateColor[indexPath.row]
-
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 48, bottom: 0, right: 16)
         return cell
     }
 }

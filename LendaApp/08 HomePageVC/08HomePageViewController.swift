@@ -1,9 +1,4 @@
-//
-//  08HomePageViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 15/07/2021.
-//
+
 
 import UIKit
 import Firebase
@@ -109,9 +104,9 @@ class _8HomePageViewController: UIViewController {
                     arrContract.append(contract.inforContract)
                 }
                 tableView.reloadData()
-                print("arrContract.count: \(arrContract.count)")
             }
         }
+        
 }
 
 extension _8HomePageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -142,4 +137,3 @@ extension _8HomePageViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 }
-

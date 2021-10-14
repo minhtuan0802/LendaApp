@@ -1,9 +1,3 @@
-//
-//  01SplashViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 10/07/2021.
-//
 
 import UIKit
 
@@ -50,7 +44,7 @@ class _1SplashViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         setupLayout()
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runSplash), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(runSplash), userInfo: nil, repeats: true)
     }
 
     func setupLayout() {

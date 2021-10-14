@@ -48,6 +48,8 @@
 		CBEE7A7D269FD9C40053C10D /* 08HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE7A7C269FD9C40053C10D /* 08HomePageViewController.swift */; };
 		CBF459EB26FD808800D3D497 /* CreateContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF459EA26FD808800D3D497 /* CreateContractViewController.swift */; };
 		CBF459ED26FD80FA00D3D497 /* CreateContractUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF459EC26FD80FA00D3D497 /* CreateContractUITableViewCell.swift */; };
+		CBFC47D12711370300DB56A0 /* TimeEvictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC47D02711370300DB56A0 /* TimeEvictionViewController.swift */; };
+		CBFC47D32711372C00DB56A0 /* TimeEvictionUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC47D22711372C00DB56A0 /* TimeEvictionUITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		CBEE7A7C269FD9C40053C10D /* 08HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08HomePageViewController.swift; sourceTree = "<group>"; };
 		CBF459EA26FD808800D3D497 /* CreateContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractViewController.swift; sourceTree = "<group>"; };
 		CBF459EC26FD80FA00D3D497 /* CreateContractUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContractUITableViewCell.swift; sourceTree = "<group>"; };
+		CBFC47D02711370300DB56A0 /* TimeEvictionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEvictionViewController.swift; sourceTree = "<group>"; };
+		CBFC47D22711372C00DB56A0 /* TimeEvictionUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEvictionUITableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				CB4DEC0A26CF627500F8C4BC /* 17 NotificationVC */,
 				CB4DEC0B26CF629000F8C4BC /* 18 DetailNotificationVC */,
 				CBF459E926FD7FD800D3D497 /* 20 CreateContract */,
+				CBFC47CF271135D300DB56A0 /* 22 TimeEviction */,
 				CB4DEC0C26CF62A300F8C4BC /* 23 HistoryLoanAmountVC */,
 				CB15AAEE26999E680022FEB1 /* LaunchScreen.storyboard */,
 				CB4DEBF926CF554200F8C4BC /* GoogleService-Info.plist */,
@@ -353,6 +358,15 @@
 			path = "20 CreateContract";
 			sourceTree = "<group>";
 		};
+		CBFC47CF271135D300DB56A0 /* 22 TimeEviction */ = {
+			isa = PBXGroup;
+			children = (
+				CBFC47D02711370300DB56A0 /* TimeEvictionViewController.swift */,
+				CBFC47D22711372C00DB56A0 /* TimeEvictionUITableViewCell.swift */,
+			);
+			path = "22 TimeEviction";
+			sourceTree = "<group>";
+		};
 		F2185FF92EE51D03F6F229C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +529,7 @@
 				CB15AAFE2699DA910022FEB1 /* 02WellcomeViewController.swift in Sources */,
 				CBCC441C26A18CDC005753E7 /* 09InvestmentDetailsViewController.swift in Sources */,
 				CB7AD81426A522A2002A2122 /* 16ProfileViewController.swift in Sources */,
+				CBFC47D32711372C00DB56A0 /* TimeEvictionUITableViewCell.swift in Sources */,
 				CB168BB826A26D0A00F292F3 /* 10PersonalPageViewController.swift in Sources */,
 				CBA73F3E26F5A6830005154C /* Data.swift in Sources */,
 				CB15AB02269A0B390022FEB1 /* 04RegisterViewController.swift in Sources */,
@@ -529,6 +544,7 @@
 				CBEE7A7D269FD9C40053C10D /* 08HomePageViewController.swift in Sources */,
 				CBF459ED26FD80FA00D3D497 /* CreateContractUITableViewCell.swift in Sources */,
 				CBAB9BA226A8148300B6AC2D /* 23HistoryLoanAmountViewController.swift in Sources */,
+				CBFC47D12711370300DB56A0 /* TimeEvictionViewController.swift in Sources */,
 				CB168BBA26A2851500F292F3 /* 10PersonalPageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

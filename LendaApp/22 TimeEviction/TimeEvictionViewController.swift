@@ -1,9 +1,3 @@
-//
-//  TimeEvictionViewController.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 09/10/2021.
-//
 
 import UIKit
 import Firebase
@@ -25,14 +19,14 @@ class TimeEvictionViewController: UIViewController {
         tableView.register(TimeEvictionUITableViewCell.self, forCellReuseIdentifier: "TimeEvictionUITableViewCell")
         return tableView
     }()
-    
     var contract = UserInformation()
     var arrContract = [[String : String]]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
+        fetchData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -43,7 +37,6 @@ class TimeEvictionViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        tabBarController?.tabBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -75,6 +68,35 @@ class TimeEvictionViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0).isActive = true
     }
     
+    func fetchData(){
+            guard let user = Auth.auth().currentUser else {return}
+            let db = Firestore.firestore()
+            let userCollection = db.collection("User")
+            let userDocument = userCollection.document(user.uid)
+            let contractInformationCollection = userDocument.collection("ContractInformation")
+            contractInformationCollection.addSnapshotListener { [self] query, err in
+                if err != nil {return}
+
+                if arrContract.count < query!.documents.count {
+                    arrContract.removeAll()
+                }
+
+                for i in query!.documents {
+                    self.contract.inforContract["LoanFormat"] = i.get("LoanFormat") as? String ?? ""
+                    self.contract.inforContract["LoanAmount"] = i.get("LoanAmount") as? String ?? ""
+                    self.contract.inforContract["InterestRate"] = i.get("InterestRate") as? String ?? ""
+                    self.contract.inforContract["LoanDuration"] = i.get("LoanDuration") as? String ?? ""
+                    self.contract.inforContract["PayFormat"] = i.get("PayFormat") as? String ?? ""
+                    self.contract.inforContract["FullName"] = i.get("FullName") as? String ?? ""
+                    self.contract.inforContract["NumberPhone"] = i.get("NumberPhone") as? String ?? ""
+                    self.contract.inforContract["Address"] = i.get("Address") as? String ?? ""
+
+                    arrContract.append(contract.inforContract)
+                }
+                tableView.reloadData()
+            }
+        }
+    
     
 }
 
@@ -83,27 +105,22 @@ extension TimeEvictionViewController: UITableViewDataSource, UITableViewDelegate
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arrContract.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "_8HomePageTableViewCell", for: indexPath) as! _8HomePageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEvictionUITableViewCell", for: indexPath) as! TimeEvictionUITableViewCell
         cell.selectionStyle = .none
-//        cell.moneyNumberLabel.text = arrContract[indexPath.row]["LoanAmount"]
-//        cell.interestRateNumberLabel.text = arrContract[indexPath.row]["InterestRate"]
-//        cell.term.text = arrContract[indexPath.row]["LoanDuration"]
-//        cell.formality.text = arrContract[indexPath.row]["LoanFormat"]
-//        cell.address.text = arrContract[indexPath.row]["Address"]
-//        cell.nameLabel.text = arrContract[indexPath.row]["FullName"]
+        cell.moneyNumberLabel.text = arrContract[indexPath.row]["LoanAmount"]
+        cell.nameLabel.text = arrContract[indexPath.row]["FullName"]
         return cell
 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let investmentDetailsVC = _9InvestmentDetailsViewController()
-        investmentDetailsVC.arrayValue = arrContract[indexPath.row]
-        navigationController?.pushViewController(investmentDetailsVC, animated: true)
-
+        let historyLoanVC = _3HistoryLoanAmountViewController()
+        historyLoanVC.arrayValue = arrContract[indexPath.row]
+        navigationController?.pushViewController(historyLoanVC, animated: true)
     }
 }
 

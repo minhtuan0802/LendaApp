@@ -1,9 +1,4 @@
-//
-//  16ProfileTableViewCell.swift
-//  LendaApp
-//
-//  Created by Ngô Minh Tuấn on 19/07/2021.
-//
+
 
 import UIKit
 
