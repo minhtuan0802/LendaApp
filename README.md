@@ -2,7 +2,9 @@
 - Đọc để hiểu kỹ tất cả các tính năng của ứng dụng
 - Project hướng đến 1 quy trình khép kín cho việc soát tài chính cho vay.
 - Project sử dụng Firebase để lưu dữ data
-
+- Bạn có thể tạo 1 tài khoản mới hoặc dùng tài khoản sau để sử dụng data có sẵn:
+  - Tài Khoản: ngominhtuan0802@gmail.com
+  - Mật khẩu: 123456
 # Project gồm 2 phần chính: 
 **- 1. Thao tác đăng nhập, đăng ký, thay đổi mật khẩu, lấy lại mật khẩu..**
 - Màn hình Slash
